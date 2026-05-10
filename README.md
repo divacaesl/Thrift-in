@@ -69,11 +69,9 @@ C:\xampp\htdocs\thriftin\
 http://localhost/thriftin
 ```
 
-### 4. Login Default
-| Username | Password | Role  |
-|----------|----------|-------|
-| admin    | admin123 | Admin |
-| kasir1   | admin123 | Kasir |
+### 4. LOGIN DEFAULT:
+  Username : admin
+  Password : password
 
 ---
 
@@ -114,6 +112,7 @@ Bekas          → min Rp  1.000
 ```
 
 ---
+<<<<<<< HEAD
 
 ## 📋 Catatan untuk Praktikum PPL
 
@@ -126,3 +125,5 @@ Pastikan sebelum Hari 6:
 - [ ] CRUD penitip & barang berfungsi
 - [ ] Transaksi bisa disimpan + komisi terhitung benar
 - [ ] Status barang bisa diubah sesuai flow
+=======
+>>>>>>> e0701480897c52447b5430ade60818932b48e2d6
