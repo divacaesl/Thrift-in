@@ -2,8 +2,8 @@
 session_start();
 $pageTitle  = 'Dashboard — ThriftIn';
 $activePage = 'dashboard';
-require_once __DIR__ . '/../config/koneksi.php';
-require_once __DIR__ . '/../includes/header.php';
+require '../config/koneksi.php';
+require '../includes/header.php';
 
 // Statistik
 $totalBarang    = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) c FROM barang"))['c'];
@@ -128,4 +128,4 @@ $recentBarang = mysqli_query($conn,
     </div>
 </div>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require '../includes/footer.php'; ?>

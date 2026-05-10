@@ -4,14 +4,53 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 $role = $_SESSION['role'] ?? 'kasir';
 
 $menus = [
-    ['icon' => 'bi-grid-1x2', 'label' => 'Dashboard',        'href' => 'dashboard.php',  'file' => 'dashboard.php',  'role' => 'all'],
-    ['icon' => 'bi-people',   'label' => 'Data Penitip',      'href' => 'penitip.php',    'file' => 'penitip.php',    'role' => 'all'],
-    ['icon' => 'bi-tags',     'label' => 'Katalog Barang',    'href' => 'barang.php',     'file' => 'barang.php',     'role' => 'all'],
-    ['icon' => 'bi-bag-check','label' => 'Transaksi Jual',    'href' => 'transaksi.php',  'file' => 'transaksi.php',  'role' => 'all'],
-    ['icon' => 'bi-wallet2',  'label' => 'Pencairan Dana',    'href' => 'pencairan.php',  'file' => 'pencairan.php',  'role' => 'all'],
-    ['icon' => 'bi-bar-chart','label' => 'Laporan',           'href' => 'laporan.php',    'file' => 'laporan.php',    'role' => 'all'],
-    ['icon' => 'bi-gear',     'label' => 'Pengaturan',        'href' => 'pengaturan.php', 'file' => 'pengaturan.php', 'role' => 'admin'],
-    ['icon' => 'bi-person-gear','label' => 'Kelola User',     'href' => 'users.php',      'file' => 'users.php',      'role' => 'admin'],
+    [
+        'icon' => 'bi-grid-1x2',
+        'label' => 'Dashboard',
+        'href'  => '/thriftin/admin/dashboard.php',
+        'file'  => 'dashboard.php',
+        'role'  => 'all'
+    ],
+
+    [
+        'icon' => 'bi-people',
+        'label' => 'Data Penitip',
+        'href'  => '/thriftin/admin/penitip/index.php',
+        'file'  => 'index.php',
+        'role'  => 'all'
+    ],
+
+    [
+        'icon' => 'bi-tags',
+        'label' => 'Katalog Barang',
+        'href'  => '/thriftin/admin/barang/index.php',
+        'file'  => 'index.php',
+        'role'  => 'all'
+    ],
+
+    [
+        'icon' => 'bi-bag-check',
+        'label' => 'Transaksi Jual',
+        'href'  => '/thriftin/admin/transaksi/index.php',
+        'file'  => 'index.php',
+        'role'  => 'all'
+    ],
+
+    [
+        'icon' => 'bi-wallet2',
+        'label' => 'Pencairan Dana',
+        'href'  => '/thriftin/admin/pencairan/index.php',
+        'file'  => 'index.php',
+        'role'  => 'all'
+    ],
+
+    [
+        'icon' => 'bi-bar-chart',
+        'label' => 'Laporan',
+        'href'  => '/thriftin/admin/laporan/index.php',
+        'file'  => 'index.php',
+        'role'  => 'all'
+    ],
 ];
 ?>
 
@@ -370,7 +409,7 @@ body {
                 <div class="user-role"><?= $_SESSION['role'] ?? '' ?></div>
             </div>
         </div>
-        <a href="logout.php" class="btn-logout">
+   <a href="/thriftin/logout.php" class="btn-logout">
             <i class="bi bi-box-arrow-right"></i> Keluar
         </a>
     </div>

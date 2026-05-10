@@ -3,6 +3,7 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: ../login.php");
     exit;
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -163,27 +164,40 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 
     <nav class="nav flex-column mt-2 flex-grow-1">
+
         <div class="sidebar-section">Main</div>
-        <a href="../admin/dashboard.php" class="nav-link <?= ($activePage??'') === 'dashboard' ? 'active' : '' ?>">
+
+        <a href="/thriftin/admin/dashboard.php"
+           class="nav-link <?= ($activePage??'') === 'dashboard' ? 'active' : '' ?>">
             <i class="fa fa-chart-pie me-2"></i> Dashboard
         </a>
 
         <div class="sidebar-section">Kelola</div>
-        <a href="../admin/penitip/index.php" class="nav-link <?= ($activePage??'') === 'penitip' ? 'active' : '' ?>">
+
+        <a href="/thriftin/admin/penitip/index.php"
+           class="nav-link <?= ($activePage??'') === 'penitip' ? 'active' : '' ?>">
             <i class="fa fa-users me-2"></i> Penitip
         </a>
-        <a href="../admin/barang/index.php" class="nav-link <?= ($activePage??'') === 'barang' ? 'active' : '' ?>">
+
+        <a href="/thriftin/admin/barang/index.php"
+           class="nav-link <?= ($activePage??'') === 'barang' ? 'active' : '' ?>">
             <i class="fa fa-shirt me-2"></i> Katalog Barang
         </a>
-        <a href="../admin/transaksi/index.php" class="nav-link <?= ($activePage??'') === 'transaksi' ? 'active' : '' ?>">
+
+        <a href="/thriftin/admin/transaksi/index.php"
+           class="nav-link <?= ($activePage??'') === 'transaksi' ? 'active' : '' ?>">
             <i class="fa fa-bag-shopping me-2"></i> Transaksi
         </a>
-        <a href="../admin/pencairan/index.php" class="nav-link <?= ($activePage??'') === 'pencairan' ? 'active' : '' ?>">
+
+        <a href="/thriftin/admin/pencairan/index.php"
+           class="nav-link <?= ($activePage??'') === 'pencairan' ? 'active' : '' ?>">
             <i class="fa fa-money-bill-transfer me-2"></i> Pencairan Dana
         </a>
 
         <div class="sidebar-section">Laporan</div>
-        <a href="../admin/laporan/index.php" class="nav-link <?= ($activePage??'') === 'laporan' ? 'active' : '' ?>">
+
+        <a href="/thriftin/admin/laporan/index.php"
+           class="nav-link <?= ($activePage??'') === 'laporan' ? 'active' : '' ?>">
             <i class="fa fa-file-chart-column me-2"></i> Laporan
         </a>
 
@@ -192,6 +206,7 @@ if (!isset($_SESSION['user_id'])) {
             <?= htmlspecialchars($_SESSION['nama']) ?> •
             <span class="text-capitalize"><?= $_SESSION['role'] ?></span>
         </div>
+
     </nav>
 </div>
 
@@ -204,7 +219,7 @@ if (!isset($_SESSION['user_id'])) {
                 <i class="fa fa-circle-user"></i>
                 <?= htmlspecialchars($_SESSION['nama']) ?>
             </div>
-            <a href="../logout.php" class="btn btn-sm btn-outline-danger rounded-pill px-3">
+           <a href="/thriftin/logout.php" class="btn btn-sm btn-outline-danger rounded-pill px-3">
                 <i class="fa fa-sign-out-alt me-1"></i>Keluar
             </a>
         </div>

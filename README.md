@@ -114,3 +114,15 @@ Bekas          → min Rp  1.000
 ```
 
 ---
+
+## 📋 Catatan untuk Praktikum PPL
+
+File ini adalah **proyek objek pengujian** untuk Modul Praktikum 3.
+Semua modul harus bisa diakses via browser sebelum mulai pengujian di Pertemuan 9.
+
+Pastikan sebelum Hari 6:
+- [ ] Semua halaman bisa diakses tanpa error
+- [ ] Login/logout berfungsi normal
+- [ ] CRUD penitip & barang berfungsi
+- [ ] Transaksi bisa disimpan + komisi terhitung benar
+- [ ] Status barang bisa diubah sesuai flow
