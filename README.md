@@ -51,25 +51,12 @@ thriftin/
 
 ---
 
-## 🚀 Cara Setup
-
-### 1. Import Database
-1. Buka `http://localhost/phpmyadmin`
-2. Buat database baru → nama: `thriftin_db`
-3. Klik tab **Import** → pilih file `thriftin.sql` → klik Go
-
-### 2. Copy ke htdocs
-```
-Salin seluruh folder ke:
-C:\xampp\htdocs\thriftin\
-```
-
-### 3. Akses di Browser
+### Akses di Browser
 ```
 http://localhost/thriftin
 ```
 
-### 4. LOGIN DEFAULT:
+### LOGIN DEFAULT:
   Username : admin
   Password : password
 
@@ -112,18 +99,3 @@ Bekas          → min Rp  1.000
 ```
 
 ---
-<<<<<<< HEAD
-
-## 📋 Catatan untuk Praktikum PPL
-
-File ini adalah **proyek objek pengujian** untuk Modul Praktikum 3.
-Semua modul harus bisa diakses via browser sebelum mulai pengujian di Pertemuan 9.
-
-Pastikan sebelum Hari 6:
-- [ ] Semua halaman bisa diakses tanpa error
-- [ ] Login/logout berfungsi normal
-- [ ] CRUD penitip & barang berfungsi
-- [ ] Transaksi bisa disimpan + komisi terhitung benar
-- [ ] Status barang bisa diubah sesuai flow
-=======
->>>>>>> e0701480897c52447b5430ade60818932b48e2d6
