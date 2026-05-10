@@ -69,11 +69,9 @@ C:\xampp\htdocs\thriftin\
 http://localhost/thriftin
 ```
 
-### 4. Login Default
-| Username | Password | Role  |
-|----------|----------|-------|
-| admin    | admin123 | Admin |
-| kasir1   | admin123 | Kasir |
+### 4.LOGIN DEFAULT:
+  Username : admin
+  Password : password
 
 ---
 
