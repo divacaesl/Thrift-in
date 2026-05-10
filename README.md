@@ -69,7 +69,7 @@ C:\xampp\htdocs\thriftin\
 http://localhost/thriftin
 ```
 
-### 4.LOGIN DEFAULT:
+### 4. LOGIN DEFAULT:
   Username : admin
   Password : password
 
