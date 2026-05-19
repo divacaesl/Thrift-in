@@ -26,12 +26,7 @@
 - **Frontend**: Bootstrap 5, FontAwesome 6, Custom Sage & Terracotta Theme.
 - **Auth**: Custom Laravel Session Authentication.
 
-## 🔐 Kredensial Akses
 
-| Akun | Username | Password |
-| :--- | :--- | :--- |
-| **Administrator** | `admin` | `admin123` |
-| **Kasir** | `kasir1` | `admin123` |
 
 ## 📦 Cara Menjalankan Proyek
 
