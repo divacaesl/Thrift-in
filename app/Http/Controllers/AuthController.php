@@ -14,22 +14,46 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $credentials = $request->validate([
+        $request->validate([
             'username' => 'required',
             'password' => 'required',
         ]);
 
+        $loginType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
+        $credentials = [
+            $loginType => $request->username,
+            'password' => $request->password
+        ];
+
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+            $user = Auth::user();
             
-            if (Auth::user()->status === 'nonaktif') {
+            // Log IP and Time
+            $user->update([
+                'last_login_at' => now(),
+                'last_login_ip' => $request->ip()
+            ]);
+            
+            if (in_array($user->status, ['nonaktif', 'suspended'])) {
+                $reason = $user->suspend_reason ? " Alasan: " . $user->suspend_reason : "";
                 Auth::logout();
                 $request->session()->invalidate();
                 $request->session()->regenerateToken();
-                return back()->with('error', 'Akun Anda dinonaktifkan.');
+                return back()->with('error', 'Akun Anda dinonaktifkan atau disuspend.' . $reason);
             }
 
-            return redirect()->intended('/dashboard');
+            // Role-based redirection
+            if ($user->role === 'super_admin') {
+                return redirect()->intended(route('superadmin.dashboard'));
+            } elseif (in_array($user->role, ['admin', 'admin_produk', 'admin_keuangan', 'cs'])) {
+                return redirect()->intended(route('admin.dashboard'));
+            } elseif ($user->role === 'penjual') {
+                return redirect()->intended(route('seller.dashboard'));
+            } else {
+                return redirect()->intended(route('buyer.dashboard'));
+            }
         }
 
         return back()->with('error', 'Username atau password salah.');

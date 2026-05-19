@@ -17,8 +17,11 @@ return new class extends Migration
             $table->string('username', 50)->unique();
             $table->string('email', 100)->unique();
             $table->string('password');
-            $table->enum('role', ['admin', 'kasir'])->default('kasir');
-            $table->enum('status', ['aktif', 'nonaktif'])->default('aktif');
+            $table->enum('role', ['super_admin', 'admin_produk', 'admin_keuangan', 'cs', 'admin', 'kasir', 'pembeli', 'penjual'])->default('pembeli');
+            $table->enum('status', ['aktif', 'nonaktif', 'suspended'])->default('aktif');
+            $table->string('suspend_reason')->nullable();
+            $table->timestamp('last_login_at')->nullable();
+            $table->string('last_login_ip', 45)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

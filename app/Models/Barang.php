@@ -6,11 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Barang extends Model
 {
-    protected $fillable = [
-        'kode_barang', 'penitip_id', 'kategori_id', 'nama_barang', 
-        'deskripsi', 'kondisi', 'harga_jual', 'foto', 'status', 
-        'tgl_masuk', 'tgl_terjual', 'catatan'
-    ];
+    protected $guarded = [];
 
     public function penitip()
     {
@@ -25,5 +21,20 @@ class Barang extends Model
     public function transaksi()
     {
         return $this->hasOne(Transaksi::class);
+    }
+
+    public function ulasans()
+    {
+        return $this->hasMany(Ulasan::class);
+    }
+
+    public function wishlists()
+    {
+        return $this->hasMany(Wishlist::class);
+    }
+
+    public function negos()
+    {
+        return $this->hasMany(NegoHarga::class);
     }
 }

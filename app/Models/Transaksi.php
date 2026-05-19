@@ -6,11 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transaksi extends Model
 {
-    protected $fillable = [
-        'kode_transaksi', 'barang_id', 'nama_pembeli', 'no_hp_pembeli', 
-        'harga_jual', 'komisi_persen', 'komisi_nominal', 'hasil_penitip', 
-        'metode_bayar', 'tgl_transaksi', 'kasir_id'
-    ];
+    protected $guarded = [];
 
     public function barang()
     {
@@ -20,5 +16,20 @@ class Transaksi extends Model
     public function kasir()
     {
         return $this->belongsTo(User::class, 'kasir_id');
+    }
+
+    public function buyer()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function alamatPengiriman()
+    {
+        return $this->belongsTo(AlamatPengiriman::class, 'alamat_pengiriman_id');
+    }
+
+    public function complaint()
+    {
+        return $this->hasOne(Complaint::class);
     }
 }
