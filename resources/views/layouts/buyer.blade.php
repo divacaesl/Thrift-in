@@ -399,9 +399,23 @@
                                     </a>
                                 </li>
                                 <li><hr class="dropdown-divider"></li>
-                                @if(auth()->user()->role === 'admin' || auth()->user()->role === 'kasir')
+                                @if(in_array(auth()->user()->role, ['admin', 'kasir', 'admin_produk', 'admin_keuangan', 'cs']))
                                     <li>
-                                        <a class="dropdown-item text-primary" href="{{ route('dashboard') }}">
+                                        <a class="dropdown-item text-primary" href="{{ route('admin.dashboard') }}">
+                                            <i class="fas fa-shield-halved me-2"></i> {{ $lang == 'en' ? 'Admin Panel' : 'Panel Admin' }}
+                                        </a>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                @elseif(auth()->user()->role === 'super_admin')
+                                    <li>
+                                        <a class="dropdown-item text-primary" href="{{ route('superadmin.dashboard') }}">
+                                            <i class="fas fa-shield-halved me-2"></i> {{ $lang == 'en' ? 'Super Admin Panel' : 'Panel Super Admin' }}
+                                        </a>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                @elseif(auth()->user()->role === 'penjual')
+                                    <li>
+                                        <a class="dropdown-item text-primary" href="{{ route('seller.dashboard') }}">
                                             <i class="fas fa-shield-halved me-2"></i> {{ $lang == 'en' ? 'Seller Panel' : 'Panel Penjual' }}
                                         </a>
                                     </li>

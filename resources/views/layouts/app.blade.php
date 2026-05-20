@@ -188,8 +188,17 @@
                 <li>
                     <div class="px-3 py-2 text-muted small fw-bold text-uppercase">Menu Utama</div>
                 </li>
+                @php
+                    $dashRoute = 'buyer.dashboard';
+                    if(auth()->check()){
+                        $r = auth()->user()->role;
+                        if($r == 'super_admin') $dashRoute = 'superadmin.dashboard';
+                        elseif(in_array($r, ['admin', 'admin_produk', 'admin_keuangan', 'cs', 'kasir'])) $dashRoute = 'admin.dashboard';
+                        elseif($r == 'penjual') $dashRoute = 'seller.dashboard';
+                    }
+                @endphp
                 <li>
-                    <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                    <a href="{{ route($dashRoute) }}" class="{{ request()->routeIs($dashRoute) ? 'active' : '' }}">
                         <i class="fas fa-home"></i> Dashboard
                     </a>
                 </li>

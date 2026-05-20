@@ -43,7 +43,10 @@ class BuyerAuthController extends Controller
                 return redirect()->intended('/');
             }
 
-            return redirect()->intended('/dashboard');
+            $r = Auth::user()->role;
+            if ($r === 'penjual') return redirect()->intended(route('seller.dashboard'));
+            if ($r === 'super_admin') return redirect()->intended(route('superadmin.dashboard'));
+            return redirect()->intended(route('admin.dashboard'));
         }
 
         return back()->with('error', 'Email/Username atau password salah.');
